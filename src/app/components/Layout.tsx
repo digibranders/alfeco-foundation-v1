@@ -108,17 +108,9 @@ export function Layout({ children }: LayoutProps) {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-8 w-8 rounded-full bg-[#C1272D]" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-xs font-semibold tracking-[0.16em] uppercase text-[#7E8083]">
-                    Alfeco
-                  </span>
-                  <span className="text-sm font-semibold tracking-[0.18em] uppercase text-[#1A1A1A]">
-                    Foundation
-                  </span>
-                </div>
-              </div>
+              <Link to="/" className="inline-block mb-6">
+                <img src={logo} alt="Alfeco Foundation" className="h-10 w-auto" />
+              </Link>
             </div>
 
             <div className="md:col-span-2">
