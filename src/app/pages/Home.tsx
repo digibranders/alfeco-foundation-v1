@@ -8,9 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { FlipNumber } from '../components/FlipNumber';
 import CountUp from 'react-countup';
 
-const founderImage =
-  'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1080&q=80';
 
+import founderImage from '@/assets/founder.png';
 // Assets
 const HERO_IMAGES = [
   "https://images.unsplash.com/photo-1588712133121-05bf81cf3e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwY29tbXVuaXR5JTIwZGV2ZWxvcG1lbnQlMjBoZWxwaW5nJTIwcGVvcGxlJTIwc21pbGluZyUyMGNoaWxkcmVufGVufDF8fHx8MTc3MDcxODk5M3ww&ixlib=rb-4.1.0&q=80&w=1920",
@@ -68,7 +67,7 @@ const MagneticButton = ({ children, className, to }: { children: React.ReactNode
     const { left, top, width, height } = ref.current.getBoundingClientRect();
     const centerX = left + width / 2;
     const centerY = top + height / 2;
-    
+
     // Magnetic strength
     const strength = 0.5;
     x.set((e.clientX - centerX) * strength);
@@ -82,7 +81,7 @@ const MagneticButton = ({ children, className, to }: { children: React.ReactNode
 
   return (
     <motion.div style={{ x: xSpring, y: ySpring }}>
-      <Link 
+      <Link
         to={to}
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -119,33 +118,33 @@ export function Home() {
   return (
     <div className="flex flex-col gap-0 font-sans bg-[#EBF3F5] text-[#1A1A1A] relative">
       <ProgressBar />
-      
+
       {/* HERO SECTION */}
       <section className="flex flex-col min-h-screen relative z-10 bg-[#EBF3F5]" id="hero">
         <div className="h-[55vh] w-full overflow-hidden relative bg-gray-200">
-           <AnimatePresence mode="popLayout">
-             <motion.img 
+          <AnimatePresence mode="popLayout">
+            <motion.img
               key={currentImageIndex}
               initial={{ clipPath: "inset(0 100% 0 0)", scale: 1.1 }}
               animate={{ clipPath: "inset(0 0 0 0)", scale: 1 }}
               exit={{ opacity: 0, transition: { delay: 1.2, duration: 0 } }}
               transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-              src={HERO_IMAGES[currentImageIndex]} 
-              alt="Community Development" 
+              src={HERO_IMAGES[currentImageIndex]}
+              alt="Community Development"
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
-           </AnimatePresence>
+          </AnimatePresence>
         </div>
 
         <div className="flex-grow flex flex-col justify-center px-6 md:px-12 py-16 md:py-20 max-w-7xl mx-auto w-full">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="max-w-4xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-normal leading-[1.1] tracking-tight mb-8">
-              Igniting Hope. <br/>
+              Igniting Hope. <br />
               <span className="text-[#E8AB36] italic">Building Futures Together.</span>
             </h1>
             <p className="text-lg md:text-xl text-[#7E8083] font-light max-w-2xl mb-12 leading-relaxed font-sans">
@@ -169,21 +168,21 @@ export function Home() {
       <section className="py-24 px-6 md:px-12" id="story">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5 relative sticky top-32">
-             <motion.div {...fadeInUp} className="overflow-hidden border border-[#1A1A1A]/10">
-               <img src={founderImage} alt="Founder" className="w-full h-auto aspect-[4/5] object-cover" />
-             </motion.div>
-             <div className="mt-4 text-xs font-bold uppercase tracking-widest text-[#7E8083]">
-               Sachin Ahuja &mdash; Founder
-             </div>
+            <motion.div {...fadeInUp} className="overflow-hidden border border-[#1A1A1A]/10">
+              <img src={founderImage} alt="Founder" className="w-full h-auto aspect-[4/5] object-cover" />
+            </motion.div>
+            <div className="mt-4 text-xs font-bold uppercase tracking-widest text-[#7E8083]">
+              Sachin Ahuja &mdash; Founder
+            </div>
           </div>
-          
+
           <div className="lg:col-span-7 pt-8">
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <h2 className="text-3xl md:text-5xl font-serif font-normal mb-10 leading-tight">
                 Empowering Communities. <br />
                 <span className="italic font-normal text-[#C1272D]">Inspiring Change.</span>
               </h2>
-              
+
               <div className="md:columns-2 gap-12 text-lg font-light text-[#1A1A1A]/80 leading-relaxed text-justify space-y-6">
                 <p className="first-letter:text-7xl first-letter:font-serif first-letter:text-[#1A1A1A] first-letter:float-left first-letter:mr-3 first-letter:mt-[-10px] first-letter:font-normal first-letter:leading-[0.8]">
                   The Alfeco Foundation was born from the vision, compassion and lived experience of Mr. Sachin Ahuja, a self-made entrepreneur whose remarkable journey from a small town near Jaipur, Rajasthan, to the helm of one of South Africa’s most dynamic industrial conglomerates is a testament to perseverance, inclusivity, and the power of human connection.
@@ -191,7 +190,7 @@ export function Home() {
                 <p className="mb-6">
                   What began as a modest scrap metal trading venture grew - through resilience, foresight and relentless determination - into the Alfeco Group: a diversified enterprise spanning steel, aluminum, and copper beneficiation. Under Mr. Ahuja’s leadership, the group now employs more than 2,000 people and has propelled Veer Steel Mills into becoming one of South Africa’s second-largest steel manufacturer.
                 </p>
-                
+
                 <blockquote className="break-inside-avoid my-8 pl-6 border-l-2 border-[#C1272D] italic text-2xl font-serif text-[#1A1A1A] leading-tight">
                   "This foundation of humility, gratitude, and community forms the moral compass that guides Alfeco’s culture."
                 </blockquote>
@@ -203,7 +202,7 @@ export function Home() {
                   Out of this legacy, the Alfeco Foundation emerged, a beacon of compassion, hope and determination in South Africa’s ongoing pursuit of progress. Our purpose is deeply rooted in the belief that meaningful change is possible when people come together with courage, empathy and vision.
                 </p>
                 <p className="mb-6">
-                   We focus our efforts on strengthening lives and unlocking potential across six key pillars: Education and Development, Food Security, Women and Youth Empowerment, Alfeco Aid, Conservation and Environment and Social Support for Vulnerable Populations.
+                  We focus our efforts on strengthening lives and unlocking potential across six key pillars: Education and Development, Food Security, Women and Youth Empowerment, Alfeco Aid, Conservation and Environment and Social Support for Vulnerable Populations.
                 </p>
                 <p className="mb-6">
                   Every initiative is a testament to our unwavering commitment to building brighter futures and igniting hope in the hearts of those who aspire to rise above their circumstances.
@@ -223,7 +222,7 @@ export function Home() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#1A1A1A]/10 text-center md:text-left">
-                 <p className="font-serif italic text-2xl text-[#C1272D]">
+                <p className="font-serif italic text-2xl text-[#C1272D]">
                   Empowering communities is not just our mission. It is our purpose, our promise and our passion.
                 </p>
               </div>
@@ -250,7 +249,7 @@ export function Home() {
               { icon: Heart, title: "Empowerment", text: "Enabling individuals and communities to stand tall.", color: "#C1272D" },
               { icon: Leaf, title: "Sustainability", text: "Protecting our environment as we grow.", color: "#48B2A9" }
             ].map((value, index) => (
-              <div 
+              <div
                 key={value.title}
                 className="p-12 flex flex-col sm:flex-row items-start gap-8"
               >
@@ -274,20 +273,20 @@ export function Home() {
         <div ref={visionRef} className="relative w-full h-full" style={{ position: 'relative' }}>
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
-               <div className="overflow-hidden relative h-[500px] w-full" style={{ position: 'relative' }}>
-                 <motion.img 
+              <div className="overflow-hidden relative h-[500px] w-full" style={{ position: 'relative' }}>
+                <motion.img
                   style={{ y: visionY }}
-                  src={VISION_IMAGE} 
-                  alt="South African Landscape" 
-                  className="absolute inset-0 w-full h-[140%] object-cover opacity-80 grayscale -top-[20%]" 
+                  src={VISION_IMAGE}
+                  alt="South African Landscape"
+                  className="absolute inset-0 w-full h-[140%] object-cover opacity-80 grayscale -top-[20%]"
                 />
-                 <div className="absolute inset-0 border border-white/20 m-4 pointer-events-none z-10"></div>
-               </div>
+                <div className="absolute inset-0 border border-white/20 m-4 pointer-events-none z-10"></div>
+              </div>
             </div>
             <div className="lg:col-span-7 order-1 lg:order-2">
               <motion.div {...fadeInUp}>
                 <h2 className="text-3xl md:text-5xl font-serif font-normal mb-8">
-                  Our Vision: <br/>
+                  Our Vision: <br />
                   <span className="text-[#E8AB36]">Growth Through Development</span>
                 </h2>
                 <div className="space-y-6 text-lg font-light text-white/80 leading-relaxed md:columns-2 gap-8">
@@ -327,7 +326,7 @@ export function Home() {
               { title: "Women & Youth Empowerment", text: "Supporting entrepreneurship, leadership development and financial inclusion — enabling women and youth to grow into confident, independent change-makers.", color: "#C1272D" },
               { title: "Conservation & Environment", text: "Protecting our planet through renewable energy, green manufacturing, conservation initiatives and responsible, sustainable living.", color: "#48B2A9" }
             ].map((item, index) => (
-              <div 
+              <div
                 key={item.title}
                 className={`
                   p-12 flex flex-col items-start gap-4
@@ -395,22 +394,22 @@ export function Home() {
               ].map((pillar, index) => (
                 <div key={pillar.title} className="px-4 py-8">
                   <div className="relative h-[480px] w-full group overflow-hidden">
-                    
+
                     {/* Card Shape */}
                     <div className="absolute inset-0 w-full h-full bg-[#1A1A1A]">
                       {/* Background Image */}
-                      <img 
-                        src={pillar.img} 
-                        alt={pillar.title} 
-                        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40" 
+                      <img
+                        src={pillar.img}
+                        alt={pillar.title}
+                        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40"
                       />
-                      
+
                       {/* Color Overlay */}
-                      <div 
-                        className="absolute inset-0 mix-blend-multiply opacity-80" 
-                        style={{ backgroundColor: pillar.color }} 
+                      <div
+                        className="absolute inset-0 mix-blend-multiply opacity-80"
+                        style={{ backgroundColor: pillar.color }}
                       />
-                      
+
                       {/* Dark Overlay for Text Legibility */}
                       <div className="absolute inset-0 bg-black/40" />
                     </div>
@@ -418,18 +417,18 @@ export function Home() {
                     {/* Content Layer */}
                     <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 text-white pointer-events-none">
                       <div className="mt-8">
-                         <h3 className="text-2xl font-bold mb-2">{pillar.title}</h3>
-                         <div className="flex items-center text-xs font-bold uppercase tracking-widest opacity-70 mb-6">
-                           <span className="mr-2">📅</span> {pillar.date}
-                         </div>
-                         <p className="text-white/80 font-light leading-relaxed line-clamp-4">
-                           {pillar.text}
-                         </p>
+                        <h3 className="text-2xl font-bold mb-2">{pillar.title}</h3>
+                        <div className="flex items-center text-xs font-bold uppercase tracking-widest opacity-70 mb-6">
+                          <span className="mr-2">📅</span> {pillar.date}
+                        </div>
+                        <p className="text-white/80 font-light leading-relaxed line-clamp-4">
+                          {pillar.text}
+                        </p>
                       </div>
-                      
+
                       <div className="mb-6 pointer-events-auto">
-                        <Link 
-                          to="/impact" 
+                        <Link
+                          to="/impact"
                           className="block w-full py-4 text-center text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black border border-white"
                         >
                           Learn More
@@ -458,7 +457,7 @@ export function Home() {
               const num = parseInt(stat.number.replace(/[^0-9]/g, ""), 10);
               const suffix = stat.number.replace(/[0-9]/g, "");
               const Icon = stat.icon;
-              
+
               return (
                 <div key={stat.label} className="flex items-center gap-4">
                   <div className={`w-16 h-16 rounded-full ${stat.color} flex items-center justify-center shrink-0`}>
@@ -467,13 +466,13 @@ export function Home() {
                   <div className="h-12 w-px bg-white/20"></div>
                   <div className="flex flex-col">
                     <div className="text-3xl font-bold text-[#EBF3F5] relative">
-                      <CountUp 
-                        end={num} 
-                        duration={2.5} 
-                        suffix={suffix} 
-                        separator="," 
-                        enableScrollSpy 
-                        scrollSpyOnce 
+                      <CountUp
+                        end={num}
+                        duration={2.5}
+                        suffix={suffix}
+                        separator=","
+                        enableScrollSpy
+                        scrollSpyOnce
                       />
                     </div>
                     <div className="text-sm font-medium text-white/60">{stat.label}</div>
@@ -490,16 +489,16 @@ export function Home() {
         <motion.div className="max-w-3xl mx-auto" {...fadeInUp}>
           <h2 className="text-4xl md:text-6xl font-serif font-normal mb-12">Ready to make a difference?</h2>
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            
-            <Link 
-              to="/contact" 
+
+            <Link
+              to="/contact"
               className="inline-block bg-transparent text-white font-bold py-5 px-14 uppercase tracking-widest hover:bg-white hover:text-[#C1272D] transition-colors border border-white min-w-[200px]"
             >
               Donate Now
             </Link>
 
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="inline-block border border-white text-white font-bold py-5 px-14 uppercase tracking-widest hover:bg-white hover:text-[#C1272D] transition-colors min-w-[200px]"
             >
               Volunteer
