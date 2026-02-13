@@ -168,8 +168,8 @@ export function Home() {
       <section className="py-24 px-6 md:px-12" id="story">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5 relative sticky top-32">
-            <motion.div {...fadeInUp} className="overflow-hidden border border-[#1A1A1A]/10">
-              <img src={founderImage} alt="Founder" className="w-full h-auto aspect-[4/5] object-cover" />
+            <motion.div {...fadeInUp} className="overflow-hidden border border-[#1A1A1A]/10 mb-6 relative bg-[#EBF3F5] mb-6 aspect-[4/5]">
+              <img src={founderImage} alt="Founder" className="w-full h-adjust object-cover" />
             </motion.div>
             <div className="mt-4 text-xs font-bold uppercase tracking-widest text-[#7E8083]">
               Sachin Ahuja &mdash; Founder
