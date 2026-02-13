@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import clsx from 'clsx';
+import logo from '@/assets/logo.png';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-24 border-b border-[#1A1A1A]/10">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <img src="/src/assets/logo.png" alt="Alfeco Foundation Logo" className="h-10 w-auto" />
+              <img src={logo} alt="Alfeco Foundation Logo" className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Nav */}
