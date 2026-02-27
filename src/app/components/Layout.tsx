@@ -126,7 +126,7 @@ export function Layout({ children }: LayoutProps) {
 
             <div className="md:col-span-1 flex flex-col gap-4 text-sm text-[#7E8083]">
               <p>123 Alfeco Way<br />Industrial Park, Johannesburg</p>
-              <p>+27 11 123 4567<br />info@alfecofoundation.org</p>
+              <p>+27 11 123 4567<br /><a href="mailto:info@alfecofoundation.org" className="hover:text-[#C1272D] transition-colors">info@alfecofoundation.org</a></p>
             </div>
           </div>
 
